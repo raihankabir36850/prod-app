@@ -9,8 +9,9 @@ export default function App() {
   // Any .tsx or .jsx files in /pages will become a route
   // See documentation for <Routes /> for more info
   const pages = import.meta.globEager('./pages/**/!(*.test.[jt]sx)*.([jt]sx)');
-  console.log(pages);
+
   const { t } = useTranslation();
+  console.log(t, 't');
 
   return (
     <PolarisProvider>
@@ -22,6 +23,11 @@ export default function App() {
                 {
                   label: t('NavigationMenu.pageName'),
                   destination: '/pagename',
+                },
+
+                {
+                  label: 'Products',
+                  destination: '/Products',
                 },
                 {
                   label: 'test',
