@@ -51,12 +51,10 @@ export function ProductsCard() {
   };
 
   const getProductS = async () => {
-    console.log('enter');
     const response = await fetch('/api/products');
     if (response.ok) {
       const data = await response.json();
       const fr = await data.body.data.products;
-      console.log('success', fr);
     }
   };
 
