@@ -50,16 +50,6 @@ export function ProductsCard() {
     }
   };
 
-  const getProductS = async () => {
-    const response = await fetch('/api/products');
-    if (response.ok) {
-      const data = await response.json();
-      const fr = await data.body.data.products;
-    }
-  };
-
-  getProductS();
-
   return (
     <>
       <CalloutCard

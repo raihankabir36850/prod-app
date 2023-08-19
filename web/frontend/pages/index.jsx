@@ -1,10 +1,7 @@
-import { Card, Page, Layout, TextContainer, Image, Stack, Link, Text } from '@shopify/polaris';
+import { Page, Layout } from '@shopify/polaris';
 import { TitleBar } from '@shopify/app-bridge-react';
 import { useTranslation, Trans } from 'react-i18next';
-
-import { trophyImage } from '../assets';
-
-import { ProductsCard, ProductCard } from '../components';
+import { ProductsCard, ProductCard, ProductsList } from '../components';
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -16,7 +13,7 @@ export default function HomePage() {
           <ProductsCard />
         </Layout.Section>
         <Layout.Section>
-          <ProductCard />
+          <ProductsList />
         </Layout.Section>
       </Layout>
     </Page>

@@ -1,0 +1,49 @@
+.product_image {
+  text-align: center;
+}
+
+.productCard {
+  .Polaris-CalloutCard {
+    & > img {
+      display: none;
+    }
+
+    .Polaris-TextContainer .product-field {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      & > div {
+        width: 100%;
+      }
+    }
+
+    .Polaris-CalloutCard__Buttons {
+      .Polaris-ButtonGroup {
+        justify-content: flex-end;
+        margin-top: 0;
+        .Polaris-ButtonGroup__Item {
+          margin-top: 0;
+        }
+        .Polaris-ButtonGroup__Item--plain {
+          .Polaris-Button--plain {
+            margin: unset;
+            padding: 7px 16px;
+            background: unset;
+            border: 1px solid rgba(171, 177, 186, 1);
+            box-shadow: none;
+            color: unset;
+            &:hover {
+              background: rgba(241, 242, 244, 1);
+              text-decoration: none;
+            }
+            .Polaris-Button__Text {
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}

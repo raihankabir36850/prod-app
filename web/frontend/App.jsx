@@ -11,7 +11,6 @@ export default function App() {
   const pages = import.meta.globEager('./pages/**/!(*.test.[jt]sx)*.([jt]sx)');
 
   const { t } = useTranslation();
-  console.log(t, 't');
 
   return (
     <PolarisProvider>

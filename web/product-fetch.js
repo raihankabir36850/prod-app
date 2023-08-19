@@ -2,22 +2,30 @@ import shopify from './shopify.js';
 
 const FETCH_10_PRODUCTS = `
     {
-      products(reverse: true, first: 10) {
+      products(first: 10 reverse: true) {
         edges {
-            node {
-                id
-                title
-                productType
-                totalInventory
-                status
-                tags
-                storefrontId
-                templateSuffix
-                totalVariants
-                tracksInventory
+          node {
+            id
+            title
+            description
+            productType
+            handle
+            images(first: 10) {
+              edges {
+                node {
+                  src
+                  url
+                  altText
                 }
+              }
             }
-       }
+          }
+        }
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+      }
     }
 `;
 

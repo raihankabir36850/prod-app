@@ -18,7 +18,6 @@ export default function Routes({ pages }) {
   const routes = useRoutes(pages);
 
   const routeComponents = routes.map(({ path, component: Component }) => <Route key={path} path={path} element={<Component />} />);
-  console.log(routeComponents, 'routeComponents');
 
   const NotFound = routes.find(({ path }) => path === '/notfound').component;
 
