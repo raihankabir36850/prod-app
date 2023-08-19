@@ -8,7 +8,11 @@ export function ProductsList() {
   const { data, isLoading } = useAppQuery({ url: '/api/products' });
 
   if (isLoading) {
-    return <Spinner size='large' />;
+    return (
+      <div className='spinner'>
+        <Spinner size='large' />
+      </div>
+    );
   }
 
   if (data) {
