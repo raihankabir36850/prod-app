@@ -12,6 +12,10 @@
       display: none;
     }
 
+    .Polaris-Text--root {
+      text-transform: capitalize;
+    }
+
     .Polaris-TextContainer .product-field {
       display: flex;
       flex-direction: column;

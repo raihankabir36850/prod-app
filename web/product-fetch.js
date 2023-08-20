@@ -19,6 +19,16 @@ const FETCH_10_PRODUCTS = `
                 }
               }
             }
+
+            variants(first: 10) {
+              edges {
+                node {
+                  id
+                  title
+                  price
+                }
+              }
+            }
           }
         }
         pageInfo {

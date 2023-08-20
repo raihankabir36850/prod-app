@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spinner } from '@shopify/polaris';
+import { Spinner, Layout, LegacyCard, EmptyState } from '@shopify/polaris';
 import { useAppQuery } from '../hooks';
 
 import { ProductCard } from './ProductCard';
@@ -28,9 +28,31 @@ export function ProductsList() {
           src: product.node.images.edges[0] ? product.node.images.edges[0].node.src : '',
           alt: product.node.images.edges[0] ? product.node.images.edges[0].node.alt : '',
         },
+        variants: product.node.variants.edges.map((variant) => variant.node),
         handle: product.node.handle,
       };
     });
-    return <div className='product-list'>{modifiedData.length ? modifiedData.map((product) => <ProductCard {...product} key={product.id} />) : null}</div>;
+
+    return (
+      <div className='product-list'>
+        {modifiedData && modifiedData.length ? (
+          modifiedData.map((product) => <ProductCard {...product} key={product.id} />)
+        ) : (
+          <LegacyCard>
+            <EmptyState
+              heading='No Products Found'
+              action={{ content: 'Add transfer' }}
+              secondaryAction={{
+                content: 'Learn more',
+                url: 'https://help.shopify.com',
+              }}
+              image='https://cdn.shopify.com/s/files/1/0262/4071/2726/files/emptystate-files.png'
+            >
+              <p>Add Products usng the card above</p>
+            </EmptyState>
+          </LegacyCard>
+        )}
+      </div>
+    );
   }
 }
