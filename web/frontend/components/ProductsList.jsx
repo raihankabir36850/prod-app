@@ -21,9 +21,10 @@ export function ProductsList() {
     const modifiedData = data.body.data.products.edges.map((product) => {
       return {
         id: product.node.id,
+        legacyId: product.node.legacyResourceId,
         title: product.node.title,
         producType: product.node.productType,
-        description: product.node.description,
+        description: product.node.descriptionHtml,
         image: {
           src: product.node.images.edges[0] ? product.node.images.edges[0].node.src : '',
           alt: product.node.images.edges[0] ? product.node.images.edges[0].node.alt : '',

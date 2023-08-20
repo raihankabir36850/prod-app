@@ -2,12 +2,13 @@ import shopify from './shopify.js';
 
 const FETCH_10_PRODUCTS = `
     {
-      products(first: 10 reverse: true) {
+      products(first: 10) {
         edges {
           node {
             id
+            legacyResourceId
             title
-            description
+            descriptionHtml
             productType
             handle
             images(first: 10) {
@@ -26,6 +27,9 @@ const FETCH_10_PRODUCTS = `
                   id
                   title
                   price
+                  image {
+                    src
+                  }
                 }
               }
             }
